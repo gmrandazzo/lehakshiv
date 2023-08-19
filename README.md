@@ -5,7 +5,7 @@ Listen to any text and learn from it.
 
 Manifesto
 ---------
-This software aims to develop a platform able to upload any kind of text, convert it to audio and then give the possibility to listen from it.
+This software aims to develop a platform able to upload any text, convert it to audio and then give the possibility to listen from it.
 
 
 License
