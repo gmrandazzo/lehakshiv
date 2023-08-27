@@ -24,6 +24,7 @@ from flask import (Flask,
                    make_response,
                    send_from_directory,
 )
+import text2speak
 
 def convert_bytes(size):
     """Convert bytes to an useful size
@@ -264,7 +265,10 @@ class LBackend:
         Returns:
             Response: JSON response indicating the filename to be converted.
         """
-        return make_response(jsonify(filename))
+        lt2s = text2speak.LText2Speak(f'{self.work_dir}/uploads',
+                                      f'{self.work_dir}/converted')
+        audio_file = lt2s.get_audio_file(filename)
+        return make_response(jsonify(audio_file))
 
     def run(self, host, port):
         """Run the backend"""
